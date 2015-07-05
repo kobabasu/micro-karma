@@ -20,7 +20,7 @@ docker run --net=host --name -p 80:80 -p 443:443 -v /home/core/share/app:/var/ww
 1. exit
 
 ## app
-1. package.json内preinstallでglobalに必要なものを確認
+1. git checkout developでbranchを切り替える
 1. package.json.sampleをリネームか編集
 1. `karma init`でkarma.config.jsを作成
 1. npm install
