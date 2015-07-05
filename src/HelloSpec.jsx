@@ -10,6 +10,6 @@ describe("Hello World", () => {
 
     let content = React.findDOMNode(hello).textContent;
 
-    expect(content).toContain("ANA GiFT");
+    expect(content).toContain("Hello World");
   });
 });
