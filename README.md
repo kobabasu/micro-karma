@@ -1,6 +1,8 @@
 # micro-karma
 
-`hub clone kobabasu/micro-karma test`
+```
+hub clone kobabasu/micro-karma test
+```
 
 ## npm
 **requireがないためbrowserifyは必要ない**
