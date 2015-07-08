@@ -1,7 +1,7 @@
 {
   "name": "karma-app",
   "version": "0.0.1",
-  "description": "minimum karma test",
+  "description": "minimum karma app",
   "main": "sample/Hello.js",
   "repository": {
     "type": "git",
