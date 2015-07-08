@@ -6,7 +6,7 @@ var _reactAddons = require('react/addons');
 
 var _reactAddons2 = _interopRequireDefault(_reactAddons);
 
-var _sampleHello = require('../sample/Hello');
+var _sampleHello = require('../sample/js/Hello');
 
 var _sampleHello2 = _interopRequireDefault(_sampleHello);
 

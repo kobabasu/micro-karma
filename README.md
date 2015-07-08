@@ -1,27 +1,22 @@
 # micro-karma
 
-## vagrant
-1. hub clone cores/cores-vagrant coreos
-1. cd coreos
-1. mv user-data.sample user-data
-1. mv config.rb.sample config.rb
-1. vim Vagrantfile
-1. * $instance_name_prefix = "任意の名前"
-1. * NFCの設定
-1. * config.vm.network 80->8080, 443->3443, 3306->3306
-1. vagrant up
-1. vagnrat ssh
-
-## docker
-1. apache
 ```
-docker run --net=host --name -p 80:80 -p 443:443 -v /home/core/share/app:/var/www/html -d kobabasu/apache:0.21
+hub clone kobabasu/micro-karma test
 ```
-1. exit
 
-## app
-1. npm install
-1. npm run test
+## npm
+**requireがないためbrowserifyは必要ない**
 
-## 確認
-1. http://localhost:8080/で確認
+1. 必要があればdevelopブランチを使う  
+   `git checkout develop`
+1. package.json.sampleを確認。流用する場合はリネーム  
+   `mv package.json.sample package.json`
+1. `npm install`
+
+## karma
+1. karma.config.jsを作成。流用する場合はリネーム  
+   `karma init` or `mv karma.config.js.sample karma.config.js`
+
+## check
+1. `npm test`
+1. すべてsuccessならOK
