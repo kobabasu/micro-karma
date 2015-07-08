@@ -1,8 +1,10 @@
 # micro-karma
 
-`hub clone kobabasu/micro-karma karma`
+`hub clone kobabasu/micro-karma test`
 
 ## npm
+**requireがないためbrowserifyは必要ない**
+
 1. 必要があればdevelopブランチを使う  
    `git checkout develop`
 1. package.json.sampleを確認。流用する場合はリネーム  

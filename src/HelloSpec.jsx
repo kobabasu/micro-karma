@@ -1,5 +1,5 @@
 import React from 'react/addons'
-import Hello from '../sample/Hello'
+import Hello from '../sample/js/Hello'
 
 var TestUtils = React.addons.TestUtils;
 
