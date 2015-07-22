@@ -31,7 +31,7 @@
     "parser": "babel-eslint"
   },
   "scripts": {
-    "preinstall": "npm install -g babel browserify karma",
+    "preinstall": "npm install -g babel browserify karma karma-chrome-launcher karma-jasmine",
     "start": "NODE_ENV=production",
     "babel": "babel ./src --out-dir ./spec",
     "babel sample": "babel ./sample/src --out-dir ./sample/js",
