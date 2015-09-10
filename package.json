@@ -7,6 +7,7 @@
     "type": "git",
     "url": "//github.com/kobabasu/micro-karma.git"
   },
+
   "keywords": [
     "es6",
     "babel",
@@ -19,27 +20,33 @@
     "linux",
     "!win32"
   ],
+
   "dependencies": {
     "react-addons": "*"
   },
   "devDependencies": {
   },
+
   "browser": {
   },
   "browserify": [ "js", "jsx" ],
   "eslintConfig": {
     "parser": "babel-eslint"
   },
+
   "scripts": {
     "preinstall": "npm install -g babel babel-eslint browserify karma karma-chrome-launcher karma-jasmine",
     "start": "NODE_ENV=production",
+
     "babel": "babel ./src --out-dir ./spec",
-    "babel sample": "babel ./sample/src --out-dir ./sample/js",
     "browserify": "browserify -d --compact false ./spec/*.js > ./dist/build.js",
+    "babel sample": "babel ./sample/src --out-dir ./sample/js",
     "karma": "karma start karma.conf.js",
+
     "test": "npm run babel; npm run browserify; npm run karma",
     "build": "npm run babel; npm run babel sample; npm run browserify"
   },
+
   "preferGlobal": true,
   "author": "kobabasu",
   "license": "MIT"
