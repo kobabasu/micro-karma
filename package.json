@@ -22,6 +22,11 @@
   ],
 
   "dependencies": {
+    "babel-core": "*",
+    "babel-preset-es2015": "*",
+    "babel-preset-react": "*",
+    "babelify": "*",
+
     "react-addons": "*"
   },
   "devDependencies": {
@@ -35,12 +40,12 @@
   },
 
   "scripts": {
-    "preinstall": "npm install -g babel babel-eslint browserify karma karma-chrome-launcher karma-jasmine",
+    "preinstall": "npm install -g browserify karma karma-chrome-launcher karma-jasmine",
     "start": "NODE_ENV=production",
 
-    "babel": "babel ./src --out-dir ./spec",
-    "browserify": "browserify -d --compact false ./spec/*.js > ./dist/build.js",
-    "babel sample": "babel ./sample/src --out-dir ./sample/js",
+    "babel": "babel ./src --out-dir ./spec --presets [es2015, react]",
+    "browserify": "browserify -d --compact false ./spec/*.js > ./dist/build.js -t [ babelify --presets [ es2015 react ] ]",
+    "babel sample": "babel ./sample/src --out-dir ./sample/js -t [ babelify --presets [ es2015 react ] ]",
     "karma": "karma start karma.conf.js",
 
     "test": "npm run babel; npm run browserify; npm run karma",
