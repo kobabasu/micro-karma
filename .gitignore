@@ -4,4 +4,7 @@ bower.json-e
 package.json-e
 npm-debug-log
 
+./spec/*
+./dist/*
+
 !.gitkeep
