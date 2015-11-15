@@ -41,6 +41,9 @@
 
   "scripts": {
     "global": "npm install -g browserify karma karma-chrome-launcher karma-jasmine;",
+
+    "gitkeep": "touch ./spec/.gitkeep; touch ./dist/.gitkeep;",
+    "preinstall": "npm run gitkeep;",
     "start": "NODE_ENV=production",
 
     "babel": "babel ./src --out-dir ./spec --presets [es2015, react]",
