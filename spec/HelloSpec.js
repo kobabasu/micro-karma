@@ -1,22 +1,24 @@
 'use strict';
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+var _addons = require('react/addons');
 
-var _reactAddons = require('react/addons');
+var _addons2 = _interopRequireDefault(_addons);
 
-var _reactAddons2 = _interopRequireDefault(_reactAddons);
+var _Hello = require('../sample/js/Hello');
 
-var _sampleHello = require('../sample/js/Hello');
+var _Hello2 = _interopRequireDefault(_Hello);
 
-var _sampleHello2 = _interopRequireDefault(_sampleHello);
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var TestUtils = _reactAddons2['default'].addons.TestUtils;
+var TestUtils = _addons2.default.addons.TestUtils;
 
-describe('Hello World', function () {
-  it('should render the component', function () {
-    var hello = TestUtils.renderIntoDocument(_reactAddons2['default'].createElement(_sampleHello2['default'], null));
-    var content = _reactAddons2['default'].findDOMNode(hello).textContent;
+describe("Hello World", function () {
+  it("should render the component", function () {
 
-    expect(content).toContain('ANA GiFT');
+    var hello = TestUtils.renderIntoDocument(_addons2.default.createElement(_Hello2.default, null));
+
+    var content = _addons2.default.findDOMNode(hello).textContent;
+
+    expect(content).toContain("Hello World");
   });
 });
