@@ -7,4 +7,6 @@ npm-debug-log
 ./spec/*
 ./dist/*
 
+./gulp/dir.es6
+
 !.gitkeep
