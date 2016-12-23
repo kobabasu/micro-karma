@@ -27,7 +27,7 @@
     "babel-preset-react": "*",
     "babelify": "*",
 
-    "react-addons": "*"
+    "react-addons-test-utils": "*"
   },
   "devDependencies": {
   },
