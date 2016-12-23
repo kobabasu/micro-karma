@@ -13,25 +13,21 @@ class Karma extends DefaultRegistry {
     let prefix = (dir.name == '') ? '' : dir.name + ':';
 
     /*
-     * test 
+     * src
      */
     const test = {
       src:   dir.src,
       spec:  dir.spec,
-      test:  dir.root + 'karma.conf.js'
+      test:  dir.root + 'karma.conf.js',
+      dist:  dir.dist,
+      watch: dir.src + '**/*.*'
     };
 
-    gulp.task(prefix + 'karma', shell.task([`
-      karma start ${test.test}
-    `]));
-
-    /*
-    gulp.task(prefix + 'karma:build', shell.task([`
+    gulp.task(prefix + 'karma:babel', shell.task([`
       babel ${test.src} --out-dir ${test.spec}
     `]));
-    */
 
-    gulp.task(prefix + 'karma:build', shell.task([`
+    gulp.task(prefix + 'karma:browserify', shell.task([`
       for file in $(find ${test.spec} -maxdepth 1 -type f); do
         src=$(basename $file);
         dist=$(echo $src | sed 's/\.[^\.]*$//');
@@ -39,11 +35,48 @@ class Karma extends DefaultRegistry {
       done
     `]));
 
+    gulp.task(prefix + 'karma:src',
+      gulp.series(
+        prefix + 'karma:babel',
+        prefix + 'karma:browserify'
+    ));
 
+
+    /*
+     * karma
+     */
+    gulp.task(prefix + 'karma', shell.task([`
+      karma start ${test.test}
+    `]));
+
+
+    /*
+     * run
+     */
+    gulp.task(prefix + 'karma:run', shell.task([`
+      karma run
+    `], {ignoreErrors: true}));
+
+
+    /*
+     * watch
+     */
+    gulp.task(prefix + 'karma:watch', () => {
+      gulp
+        .watch([test.watch], gulp.series(
+          prefix + 'karma:src',
+          prefix + 'karma:run'
+        ))
+        .on('error', err => console.error('' + err));
+    });
+
+
+    /*
+     * test
+     */
     gulp.task(prefix + 'test',
       gulp.series(
-        prefix + 'karma:build',
-        // prefix + 'karma'
+        prefix + 'karma'
     ));
   }
 };
