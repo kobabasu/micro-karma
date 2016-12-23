@@ -24,9 +24,9 @@ hub clone kobabasu/micro-karma test
 ## gulp
 1. gulp/dir.es6.sampleをコピーしgulp/dir.es6を作成
 1. gulp/dir.es6を変更
-1. documentRootでgulp testを実行し動作するか確認
-1. documentRootのgulpfile.babel.js内で読み込み
 
-## check
-1. `npm test`
-1. すべてsuccessならOK
+## run
+1. documentRootでgulp testを実行
+1. 別コンソールで、documentRootのgulp karma:watchを実行
+1. src/HelloSpec.jsxを変更し保存
+1. 結果が表示されればOK
