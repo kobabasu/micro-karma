@@ -12,5 +12,6 @@ export const dir = {
 
   root: root + 'test/',
   src:  root + 'test/src/',
-  spec: root + 'test/spec/'
+  spec: root + 'test/spec/',
+  dist: root + 'test/dist/'
 }
